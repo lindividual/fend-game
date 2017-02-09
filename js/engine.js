@@ -80,7 +80,7 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -152,6 +152,27 @@ var Engine = (function(global) {
         });
 
         player.render();
+    }
+
+    //check collision
+    function checkCollisions() {
+        // collision: return ture or false
+        function collision(a, b) {
+            return a.x < b.x + b.width &&
+                   a.x + a.width > b.x &&
+                   a.y < b.y + b.height &&
+                   a.y + a.height > b.y;
+        }
+
+        //check the collision between the palyer and all the enemies 
+        allEnemies.forEach(function(enemy) {
+                if(collision(player, enemy)) {
+                    player.hit();
+                    alert("collision");
+                }
+        });
+
+        console.log("checking");
     }
 
     /* This function does nothing but it could have been a good place to

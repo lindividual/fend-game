@@ -51,6 +51,10 @@ Player.prototype.update = function() {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
+Player.prototype.hit = function(player) {
+    player = new Player();
+}
 // a handleInput() method.
 Player.prototype.handleInput = function(userInput) {
         switch(userInput)
