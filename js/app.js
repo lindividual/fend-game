@@ -40,7 +40,7 @@ Enemy.prototype.standBy = function(number) {
 // Now write your own player class
 var Player = function() {
     this.sprite = 'images/char-boy.png';
-    this.x = 90;
+    this.x = 101;
     this.y = 400;
 };
 // This class requires an update(), render() and
@@ -57,28 +57,28 @@ Player.prototype.handleInput = function(userInput) {
         {
             case 'left':
                 if (this.x > 0) {
-                    this.x -= 90;
+                    this.x -= 101;
                 } else {
                     alert ('!');
                 }
             break;
             case 'right':
                 if (this.x < 83 * 5) {
-                    this.x += 90;
+                    this.x += 101;
                 } else {
                     alert ('!');
                 }
             break;
             case 'up':
                 if (this.y > 0) {
-                    this.y -= 110;
+                    this.y -= 83;
                 } else {
                     alert ('!');
                 }
             break;
             case 'down':
                 if (this.y < 101 * 5) {
-                    this.y += 110;
+                    this.y += 83;
                 } else {
                     alert ('!');
                 }
