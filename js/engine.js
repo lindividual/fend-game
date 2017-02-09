@@ -158,10 +158,10 @@ var Engine = (function(global) {
     function checkCollisions() {
         // collision: return ture or false
         function collision(a, b) {
-            return a.x < b.x + b.width &&
-                   a.x + a.width > b.x &&
-                   a.y < b.y + b.height &&
-                   a.y + a.height > b.y;
+            return a.x < b.x + 50 &&
+                   a.x + 50 > b.x &&
+                   a.y < b.y + 50 &&
+                   a.y + 50 > b.y;
         }
 
         //check the collision between the palyer and all the enemies 
@@ -171,9 +171,9 @@ var Engine = (function(global) {
                     alert("collision");
                 }
         });
-
-        console.log("checking");
     }
+
+    //
 
     /* This function does nothing but it could have been a good place to
      * handle game reset states - maybe a new game menu or a game over screen

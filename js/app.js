@@ -45,7 +45,10 @@ var Player = function() {
 };
 // This class requires an update(), render() and
 Player.prototype.update = function() {
-
+    if(this.y < 50) {
+        alert("you win!");
+        this.y = 400;
+    }
 };
 
 Player.prototype.render = function() {
@@ -53,7 +56,7 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.hit = function(player) {
-    player = new Player();
+    this.y = 400;
 }
 // a handleInput() method.
 Player.prototype.handleInput = function(userInput) {
@@ -62,29 +65,21 @@ Player.prototype.handleInput = function(userInput) {
             case 'left':
                 if (this.x > 0) {
                     this.x -= 101;
-                } else {
-                    alert ('!');
                 }
             break;
             case 'right':
-                if (this.x < 83 * 5) {
+                if (this.x < 83 * 4) {
                     this.x += 101;
-                } else {
-                    alert ('!');
                 }
             break;
             case 'up':
                 if (this.y > 0) {
                     this.y -= 83;
-                } else {
-                    alert ('!');
                 }
             break;
             case 'down':
-                if (this.y < 101 * 5) {
+                if (this.y < 400) {
                     this.y += 83;
-                } else {
-                    alert ('!');
                 }
             break;
         }; 
