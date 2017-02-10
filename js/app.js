@@ -35,7 +35,7 @@ Enemy.prototype.render = function() {
 Enemy.prototype.standBy = function(number) {
     allEnemies[number] = this;
     console.log("i am coming!");
-}
+};
 
 // Now write your own player class
 var Player = function() {
@@ -57,7 +57,8 @@ Player.prototype.render = function() {
 
 Player.prototype.hit = function(player) {
     this.y = 400;
-}
+};
+
 // a handleInput() method.
 Player.prototype.handleInput = function(userInput) {
         switch(userInput)
@@ -82,7 +83,7 @@ Player.prototype.handleInput = function(userInput) {
                     this.y += 83;
                 }
             break;
-        }; 
+        }
 };
 
 
@@ -92,7 +93,7 @@ var allEnemies = [];
 
 var generateEnemies = function(number) {
     for(var i = 0; i < number; i++) {
-        var enemy = new Enemy;
+        var enemy = new Enemy();
         enemy.standBy(i);
     }
 };
